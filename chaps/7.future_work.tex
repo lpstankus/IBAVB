@@ -1,0 +1,9 @@
+%!TeX root=../paper.tex
+
+\section{Conclusion}\label{sec:conclusion}
+
+In this paper, we introduced a novel metric ($\omega$) for measuring local ambiguity in bundled path visualizations, and IBAVB, an ambiguity-aware bundling method that builds upon existing iterative bundling techniques. Our metric addresses a significant gap in the field by providing localized measurements of ambiguity throughout the visualization, allowing for more precise evaluation and control of bundle clarity. Through extensive validation, we demonstrated that $\omega$ effectively captures ambiguity patterns across various scenarios, from simple crossings to complex bundle configurations.
+
+IBAVB leverages the capabilities of $\omega$ to create bundled visualizations that actively avoid high-ambiguity configurations. By modulating the bundling process based on local ambiguity measurements, our method achieves improved visual clarity while maintaining the benefits of path bundling. The method's design as an extension to existing iterative bundling algorithms ensures its broad applicability and allows it to inherit the specific advantages of different bundling techniques.
+
+While our current implementation presents some computational limitations for real-time applications, it performs well for offline visualization tasks, successfully handling millions of paths on consumer-grade hardware. Future work could explore optimization strategies to improve real-time performance and extend the method's applicability to non-iterative bundling paradigms.

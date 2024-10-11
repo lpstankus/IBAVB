@@ -1,0 +1,29 @@
+%!TeX root=../paper.tex
+
+\section{Discussion}\label{sec:discussion}
+
+Building upon the results presented in the previous section, we now discuss the key aspects of the proposed method, including its performance in avoiding ambiguity, its flexibility, computational performance, and limitations.
+
+\subsection{Flexibility}
+
+By operating as an additional layer on existing iterative bundling algorithms, IBAVB inherits the characteristics of the underlying method. This approach leverages existing bundling literature to adapt to the specific requirements of a given problem, allowing IBAVB to be implemented on top of the most suitable bundling technique. While IBAVB is limited to iterative methods, this is not a significant restriction, as most state-of-the-art bundling techniques, particularly image-based methods, are iterative in nature\cite{lhuillier:2017:survey}. This modular design ensures compatibility with ongoing developments in iterative bundling; consequently, improvements in bundle formation or specialized case management within these algorithms directly enhance IBAVB's performance.
+
+
+\subsection{Ambiguity-Avoidance}
+
+IBAVB demonstrates superior performance in ambiguity avoidance compared to existing methods, effectively preventing the formation of visually confusing bundle intersections. From our tests, it outperforms both traditional bundling methods and Edge Path Bundling for ambiguity avoidance. However, this improvement in ambiguity comes with a notable trade-off in terms of overall bundle quality. Our approach tends to have increased visual clutter. This trade-off between ambiguity avoidance and visual density represents a fundamental characteristic of our approach.
+
+\subsection{Limitations}\label{sec:limitations}
+
+While our proposed metric offers a valuable tool for assessing and reducing ambiguity in bundling, it is important to acknowledge its inherent limitations. These limitations primarily concern computational performance and scope of application.
+
+\textbf{Computational Cost:}
+
+IBAVB's core visualization method is extremely simple and computationally efficient, as we only read from a texture and modulate a vector according to it. However, computing $\omega$ presents several computational challenges. The na\"ive implementation without approximations has substantial VRAM consumption and exhibits prohibitively slow computation times, making it infeasible for practical use. We mitigated this issue through the proposed approximation and pre-computation of the paths differences. For offline computation and analysis tasks, the performance is satisfactory. Our approximated implementation successfully handles offline rendering of visualizations with millions of paths on consumer-grade hardware, demonstrating IBAVB's practical applicability. However, real-time rendering is a constraint, which does not impact the method's primary use case. We argue that this computational trade-off is well justified, as IBAVB represents a significant advancement in ambiguity-avoiding bundling methods for trail visualization.
+
+IBAVB's core visualization method is extremely simple and computationally efficient, as we only read from a texture and modulate a vector according to it. However, computing $\omega$ presents computational challenges due to high VRAM consumption and architectural limitations on GPUs. We have successfully addressed these through strategic approximations and pre-computation techniques. The only remaining performance constraint is real-time rendering, which does not impact the method's primary use case. In fact, our approximated implementation successfully handles offline rendering of visualizations with millions of paths on consumer-grade hardware, demonstrating IBAVB's practical applicability. This computational trade-off is well justified, as IBAVB represents a significant advancement in ambiguity-avoiding bundling methods for trail visualization.
+
+% lucas: IDK if this is something that we should _really_ set as a limitation. Often the non-iterative methods use only the structure of the network to bundle and thus aim to not be ambiguous in the first place (at least indirectly). Therefore, I don't think there's a significant lack of impact because of this.
+\textbf{Applicability to Bundling Algorithms:} IBAVB is currently designed to function specifically with iterative bundling algorithms. While iterative techniques represent a significant portion of existing bundling methods, this design choice limits IBAVB's applicability to other bundling paradigms, such as hierarchical approaches. This restriction affects the tool's versatility across the full spectrum of bundling techniques.
+
+\textbf{Bundle Formation Optimization:} Our approach operates based on local information, modulating whether or not to bundle edges and how much to do so. It does not directly influence how edges are bundled. Consequently, while our metric can prevent undesirable bundling, it does not guarantee optimal bundle formation. This limitation could result in bundles that are locally improved but globally suboptimal. It also leads to increase visual clutter compared to the default techniques IBAVB is built upon.

@@ -1,0 +1,37 @@
+%!TeX root=../paper.tex
+
+\section{Ambiguity-Avoidance Bundling}\label{sec:bundling}
+
+With the ambiguity metric defined, we now introduce our method for reducing ambiguity in graph bundling. A key advantage of our approach is its modularity; rather than developing a standalone bundling algorithm, we propose a framework that can be integrated with existing techniques. This allows us to leverage the strengths of established bundling methods while adding ambiguity-avoidance to the stack. By adapting to the underlying characteristics of different bundling algorithms, our approach offers broad applicability and can be tailored to specific problem domains.
+
+Initially, we explore two distinct implementations of this framework: a post-processing method that can be applied universally and a modification specifically designed for iterative bundling techniques, which operates by adjusting path point displacement during each iteration. Due to limitations encountered with the post-processing implementation, we restrict our analysis and evaluation to the iterative bundling modification.
+
+
+\subsection{Post-processing Approach}
+
+Our initial investigation focused on developing a post-processing solution to reduce ambiguity in bundled visualizations. This approach was particularly appealing due to its potential for universal application—it could theoretically enhance any existing bundling method without requiring modifications to the core bundling algorithm. The concept involved locally interpolating between the bundled and unbundled states based on the measured ambiguity in each region.
+
+% lucas: should I add an image of the "unbundled" bundled visualization to "prove" that the results were indeed bad? Also, I added a flag so that I can easily enable or disable this post-processing step, should I mention it in the paper?
+However, this approach quickly revealed fundamental limitations. Attempting to ``unbundle" high-ambiguity regions generated excessive visual clutter, while trying to bundle these areas again merely recreated the initial bundled state we were trying to modify. These immediate practical constraints led us to abandon the post-processing approach in favor of a more promising direction: integrating ambiguity awareness directly into the iterative bundling process.
+
+
+\subsection{Image Based Ambiguity-Avoidance Bundling (IBAVB)}
+
+After exploring ambiguity-avoidance through post-processing, we focused on developing a method that could influence bundle formation during the iterative process itself, as it would grant us more control over it. Our approach, which we call Image Based Ambiguity-Avoidance Bundling (IBAVB), operates by modifying the core mechanics of iterative bundling algorithms. These algorithms typically move paths incrementally at each iteration according to specific vector fields or transformation rules. IBAVB leverages this characteristic by using $\omega$ to influence these movement patterns, steering paths toward configurations that generate less ambiguity.
+
+During our investigation, we explored several strategies for incorporating ambiguity awareness into the bundling process, including modulating bundling speed, implementing repulsion forces, and interpolating bundling vectors. Through both qualitative and quantitative evaluation, we found that the simplest approach, modulating bundling speed based on local ambiguity, produced the most effective results. A part of these are present as supplementary material. Next, we present the mathematical formulation of this approach, demonstrating how we integrate ambiguity awareness into the bundling process through speed modulation.
+
+\textbf{IBAVB:} The overview idea behind IBAVB is simple, if a path is being moved to a region with less ambiguity, we do nothing; if a path is being moved to a region with more ambiguity, we slow down the deformation of the path according to the destination ambiguity. Let $S : \mathbb{R}^2 \rightarrow \mathbb{R}^2$ be the step function that $B$ uses for bundling applied to each point in paths; we want to define IBAVB for a given point $\mathbf{a} \in p_i$ with $\eta$, where $p_i \in D(P)$, in a way that $\eta$ replaces $S$ in the original bundling method. For such, we consider the vector $\mathbf{d} = S(\mathbf{a}) - \mathbf{a}$ to to define $\eta$ as follows:
+
+\textbf{IBAVB Formulation:} The fundamental principle of IBAVB is to modulate the bundling process based on local ambiguity. When a path segment moves toward a region of lower ambiguity, the bundling proceeds normally; however, when moving toward higher ambiguity regions, we attenuate the deformation proportionally to the destination's ambiguity level. More formally, let $S : \mathbb{R}^2 \rightarrow \mathbb{R}^2$ be the step function that bundling method $B$ applies to each point in the path set. We define IBAVB's transformation function $\eta$ to replace $S$ in the original bundling method. For a given point $\mathbf{a} \in p_i$, where $p_i \in D(P)$, and displacement vector $\mathbf{d} = S(\mathbf{a}) - \mathbf{a}$, we formulate $\eta$ as follows:
+
+\begin{align}
+\mu(\mathbf{a} \in p_i) &=
+\begin{cases}
+    1                             & \mbox{if } \omega(S(\mathbf{a})) \leq \omega(\mathbf{a}) \\
+    (1 - \omega(S(\mathbf{a})))^2 & \mbox{otherwise}
+\end{cases} \\
+\eta(\mathbf{a} \in p_i) &= \mu(\mathbf{a})\mathbf{d} + \mathbf{a}
+\end{align}
+ 
+With this definition, $\eta$ uses both the original and displaced points to control the bundling speed of $S$ for all $\mathbf{a} \in p_i$, $p_i \in D(P)$. This mechanism slows down bundling in regions of high ambiguity, allowing bundles to form in ways that preserve visual clarity. In the following section we demonstrate IBAVB's effectiveness through comparative examples with state-of-the-art bundling techniques.

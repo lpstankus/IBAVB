@@ -1,0 +1,838 @@
+% Data:
+
+% nonempty:
+
+\begin{filecontents*}[overwrite]{nonempty-abs-ts.csv}
+5,     8.8968,  1.7274
+10,    4.5428,  1.2179
+25,    1.8667,  0.7382
+50,    0.9000,  0.4431
+100,   0.5208,  0.2466
+250,   0.4273,  0.1521
+500,   0.4440,  0.0990
+1000,  0.4446,  0.0612
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{nonempty-rel-ts.csv}
+5,    37.3880, 7.2592
+10,   16.1368, 4.3263
+25,    6.0543, 2.3941
+50,    2.8281, 1.3923
+100,   1.6122, 0.7635
+250,   1.3113, 0.4666
+500,   1.3586, 0.3030
+1000,  1.3590, 0.1870
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{nonempty-abs-us.csv}
+5,    17.4502, 3.6530
+10,    8.5403, 2.6043
+25,    3.3032, 1.3414
+50,    1.7544, 0.7514
+100,   1.1323, 0.3523
+250,   0.8487, 0.1079
+500,   0.7881, 0.0335
+1000,  0.7692, 0.0005
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{nonempty-rel-us.csv}
+5,    38.4927, 8.0580
+10,   15.7148, 4.7922
+25,    5.5420, 2.2505
+50,    2.8699, 1.2291
+100,   1.8341, 0.5707
+250,   1.3685, 0.1740
+500,   1.2697, 0.0539
+1000,  1.2390, 0.0008
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{nonempty-abs-fr.csv}
+5,    22.7162, 4.3817
+10,   11.5678, 3.1837
+25,    4.6127, 1.7384
+50,    2.4959, 0.9719
+100,   1.5661, 0.4899
+250,   1.1334, 0.1667
+500,   1.0239, 0.0549
+1000,  0.9921, 0.0104
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{nonempty-rel-fr.csv}
+5,    39.0455, 7.5314
+10,   16.6798, 4.5906
+25,    6.0434, 2.2775
+50,    3.1801, 1.2383
+100,   1.9714, 0.6166
+250,   1.4191, 0.2088
+500,   1.2807, 0.0686
+1000,  1.2407, 0.0131
+\end{filecontents*}
+
+% lebucket:
+
+\begin{filecontents*}[overwrite]{lebucket-abs-ts.csv}
+5,    0.5019, 0.1872
+10,   0.2265, 0.0680
+25,   0.1538, 0.0374
+50,   0.1398, 0.0255
+100,  0.1465, 0.0166
+250,  0.1776, 0.0107
+500,  0.2068, 0.0094
+1000, 0.2223, 0.0089
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{lebucket-rel-ts.csv}
+5,    3.7382, 1.3940
+10,   1.5028, 0.4509
+25,   1.1451, 0.2785
+50,   1.0930, 0.1995
+100,  1.1643, 0.1316
+250,  1.3688, 0.0825
+500,  1.4994, 0.0684
+1000, 1.4632, 0.0585
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{lebucket-abs-us.csv}
+5,    1.4544, 0.5864
+10,   0.8501, 0.3642
+25,   0.6560, 0.1921
+50,   0.6101, 0.1207
+100,  0.6729, 0.0628
+250,  0.7241, 0.0235
+500,  0.7363, 0.0130
+1000, 0.7654, 0.0003
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{lebucket-rel-us.csv}
+5,    9.4311, 3.8025
+10,   3.6865, 1.5792
+25,   2.0193, 0.5912
+50,   1.5917, 0.3150
+100,  1.5045, 0.1404
+250,  1.4301, 0.0464
+500,  1.3076, 0.0231
+1000, 1.2347, 0.0006
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{lebucket-abs-fr.csv}
+5,    1.4553, 0.5195
+10,   1.0376, 0.3722
+25,   0.9881, 0.2093
+50,   0.9752, 0.1243
+100,  0.9500, 0.0729
+250,  0.9586, 0.0334
+500,  0.9674, 0.0143
+1000, 0.9733, 0.0040
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{lebucket-rel-fr.csv}
+5,    6.7495, 2.4095
+10,   3.7234, 1.3355
+25,   2.7865, 0.5904
+50,   2.3326, 0.2973
+100,  1.9507, 0.1496
+250,  1.6146, 0.0562
+500,  1.3907, 0.0206
+1000, 1.2626, 0.0052
+\end{filecontents*}
+
+% small:
+
+\begin{filecontents*}[overwrite]{small-abs-ts.csv}
+5,    1.0356, 0.3954
+10,   0.3226, 0.1227
+25,   0.1538, 0.0374
+50,   0.1217, 0.0191
+100,  0.1066, 0.0108
+250,  0.0982, 0.0055
+500,  0.0953, 0.0033
+1000, 0.0936, 0.0019
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{small-rel-ts.csv}
+5,    8.2139, 3.1363
+10,   2.4261, 0.9227
+25,   1.1451, 0.2785
+50,   0.9046, 0.1421
+100,  0.7909, 0.0800
+250,  0.7283, 0.0405
+500,  0.7066, 0.0248
+1000, 0.6938, 0.0137
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{small-abs-us.csv}
+5,    5.7100, 1.7059
+10,   2.0119, 0.8674
+25,   0.6560, 0.1921
+50,   0.5012, 0.0640
+100,  0.4658, 0.0180
+250,  0.4560, 0.0036
+500,  0.4539, 0.0007
+1000, 0.4535, 0.0000
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{small-rel-us.csv}
+5,    20.8177, 6.2193
+10,   6.4453, 2.7789
+25,   2.0193, 0.5912
+50,   1.5374, 0.1964
+100,  1.4277, 0.0551
+250,  1.3972, 0.0111
+500,  1.3908, 0.0022
+1000, 1.3896, 0.0000
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{small-abs-fr.csv}
+5,    5.7028, 1.8221
+10,   2.2528, 0.9111
+25,   0.9881, 0.2093
+50,   0.8274, 0.0682
+100,  0.7791, 0.0251
+250,  0.7625, 0.0059
+500,  0.7596, 0.0012
+1000, 0.7591, 0.0001
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{small-rel-fr.csv}
+5,    18.4948, 5.9093
+10,   6.5743, 2.6590
+25,   2.7865, 0.5904
+50,   2.3235, 0.1917
+100,  2.1854, 0.0703
+250,  2.1380, 0.0165
+500,  2.1299, 0.0035
+1000, 2.1284, 0.0004
+\end{filecontents*}
+
+% gtbucket:
+
+\begin{filecontents*}[overwrite]{gtbucket-abs-ts.csv}
+5,    12.9709, 2.4749
+10,    7.5670, 2.0236
+25,    3.6786, 1.4794
+50,    1.9801, 1.0363
+100,   1.2414, 0.6896
+250,   1.1639, 0.5690
+500,   1.3898, 0.4562
+1000,  1.6199, 0.3376
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gtbucket-rel-ts.csv}
+5,    44.9934, 8.5848
+10,   20.2776, 5.4228
+25,    7.4710, 3.0046
+50,    3.3637, 1.7604
+100,   1.7666, 0.9813
+250,   1.2870, 0.6292
+500,   1.2869, 0.4224
+1000,  1.2922, 0.2693
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gtbucket-abs-us.csv}
+5,    21.8919, 4.5045
+10,   12.3004, 3.6997
+25,    6.0785, 2.5463
+50,    3.8111, 1.8849
+100,   2.6785, 1.3267
+250,   1.8618, 0.7944
+500,   1.9431, 0.4893
+1000,  4.6193, 0.1823
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gtbucket-rel-us.csv}
+5,    40.8129, 8.3977
+10,   17.6621, 5.3123
+25,    6.9049, 2.8924
+50,    3.7324, 1.8459
+100,   2.2511, 1.1150
+250,   1.2044, 0.5139
+500,   1.0204, 0.2569
+1000,  2.9736, 0.1174
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gtbucket-abs-fr.csv}
+5,    29.9987, 5.7046
+10,   17.5851, 4.7903
+25,    8.8048, 3.5068
+50,    5.4525, 2.6198
+100,   3.6201, 1.8800
+250,   2.3801, 1.1182
+500,   1.9629, 0.7274
+1000,  2.2162, 0.4291
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gtbucket-rel-fr.csv}
+5,    42.4181, 8.0663
+10,   18.8969, 5.1477
+25,    7.1241, 2.8374
+50,    3.6400, 1.7489
+100,   1.9900, 1.0334
+250,   1.0527, 0.4946
+500,   0.7777, 0.2882
+1000,  0.8290, 0.1605
+\end{filecontents*}
+
+% large:
+
+\begin{filecontents*}[overwrite]{large-abs-ts.csv}
+5,    40.2398, 6.4138
+10,   20.6924, 4.8579
+25,    8.0752, 3.0982
+50,    3.3812, 1.8785
+100,   1.6611, 1.0545
+250,   1.4064, 0.7649
+500,   1.5837, 0.5246
+1000,  1.6199, 0.3376
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{large-rel-ts.csv}
+5,    48.0841, 7.6641
+10,   20.0403, 4.7048
+25,    6.9652, 2.6723
+50,    2.7987, 1.5549
+100,   1.3483, 0.8559
+250,   1.1282, 0.6136
+500,   1.2652, 0.4191
+1000,  1.2922, 0.2693
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{large-abs-us.csv}
+5,    53.9952, 8.8743
+10,   33.2724, 6.8801
+25,   16.9882, 5.0794
+50,   10.0993, 4.7364
+100,   6.4456, 2.7458
+250,   5.7949, 1.7162
+500,   5.1224, 0.9479
+1000,  4.6193, 0.1823
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{large-rel-us.csv}
+5,    50.9546, 8.3746
+10,   26.2628, 5.4307
+25,   11.8777, 3.5514
+50,    6.7370, 3.1595
+100,   4.1986, 1.7886
+250,   3.7588, 1.1132
+500,   3.3082, 0.6122
+1000,  2.9736, 0.1174
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{large-abs-fr.csv}
+5,    90.8519, 12.8750
+10,   49.7062, 11.1274
+25,   21.5878,  7.5185
+50,   11.7072,  5.2135
+100,   6.6207,  3.5745
+250,   3.8879,  1.8427
+500,   2.8863,  1.0464
+1000,  2.2162,  0.4291
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{large-rel-fr.csv}
+5,    50.9561, 7.2212
+10,   22.6512, 5.0708
+25,    8.7194, 3.0367
+50,    4.5440, 2.0236
+100,   2.5181, 1.3595
+250,   1.4623, 0.6931
+500,   1.0811, 0.3919
+1000,  0.8290, 0.1605
+\end{filecontents*}
+
+% END of data
+
+Given the formal definition of the metric, its na\"ive implementation, and our proposed approximated implementation, the last step is to present a validation for the approximation. This section compares our proposed approximation's performance against the na\"ive implementation regarding accuracy and VRAM consumption. To do so, we compare the ambiguity maps produced by both implementations for different values of $\param_D$ across three different datasets: one with artificial data and other two with real-world data, the US migrations and the France airlines dataset (see Section \ref{sec:datasets}). Following the pillars previously stated in Section \ref{sec:methodology:implvalidation}, the validation is split into three different levels of analysis.
+
+We seek here to compare the implementations in the general case (Section \ref{subsec:validation_general}), in regions with few path incidences (Section \ref{subsec:validation_small}), and regions with a high rate of path incidences (Section \ref{subsec:validation_large}). All comparisons are made by taking the absolute difference between the pixels of the accurate ambiguity map and the approximated map, with the decision of which pixels to compare defined differently at each pillar. These differences are then averaged and plotted according to $\param_D$ for each dataset. We plot them two times, one with the raw differences and another with the difference percentage relative to the accurate ambiguity value of the pixel, \emph{i.e.}, if a given pixel has ambiguity 50 and the difference 10, the percentage difference in this case will be 20\%. We argue that this selection provides a good range of variation to test the approximation properly.
+
+\subsection{General case}
+\label{subsec:validation_general}
+
+To evaluate the general case, we compute the difference of each pixel with at least one incidence in the ambiguity map. The idea is to approximate numerically the visual differences between the accurate and approximated visualizations. For such, every non-null pixel must be considered; thus, every pixel with incidence. The results of the differences are presented as plots in Figure \ref{fig:validation_general}.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.49\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\linewidth,
+    axis x line=left,
+    axis y line=left,
+    xmode=log,
+    xmin=3.5,ymin=0,
+    xlabel={$\param_D$},
+    ylabel={Absolute difference},
+    xtick={5, 10, 25, 50, 100, 250, 500, 1000},
+    xticklabels={5, 10, 25, 50, 100, 250, 500, 1000},
+    table/col sep=comma,
+]
+\addplot [color=blue, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{nonempty-abs-ts.csv};
+\addplot [color=red, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{nonempty-abs-us.csv};
+\addplot [color=green!40!black, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{nonempty-abs-fr.csv};
+\end{axis}
+\end{tikzpicture}
+\caption{Absolute difference.}
+\end{subfigure}
+\hfill
+%
+\begin{subfigure}{.49\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\linewidth,
+    axis x line=left,
+    axis y line=left,
+    xmode=log,
+    xmin=3.5,ymin=0,
+    xlabel={$\param_D$},
+    ylabel={Percentage difference},
+    xtick={5, 10, 25, 50, 100, 250, 500, 1000},
+    xticklabels={5, 10, 25, 50, 100, 250, 500, 1000},
+    legend pos=north east,
+    table/col sep=comma,
+]
+\addplot [color=blue, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{nonempty-rel-ts.csv};
+    \addlegendentry{Test data}
+\addplot [color=red, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{nonempty-rel-us.csv};
+    \addlegendentry{US migrations}
+\addplot [color=green!40!black, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{nonempty-rel-fr.csv};
+    \addlegendentry{France airlines}
+\end{axis}
+\end{tikzpicture}
+\caption{Percentage difference.}
+\end{subfigure}
+\caption{Average ambiguity difference of every non-null pixel.}
+\label{fig:validation_general}
+\end{figure}
+
+From Figure \ref{fig:validation_general} we see that as $\param_D$ increases, the approximation becomes more accurate, as expected. We also see that all datasets present similar accuracy in terms of percentage, showing that the approximation works for both synthetic and real-world data. However, even though the approximation quickly converges to the final result, with around $\param_D = 100$, the data converges with a difference of approximately $1\%$ compared to the na\"ive implementation for all datasets. We discuss the possible reasons in Section \ref{sec:metric:discussion}.
+
+\subsection{Low incidence of paths}
+\label{subsec:validation_small}
+
+To evaluate the approximation in regions with few path incidences, we compute the difference of each pixel with at least one incidence and the number of incidences less than or equal to $\param_D$. The idea is to evaluate the approximation in regions where the approximation is more likely to be accurate, as the reservoir can hold all the path incidences. The results of the differences are presented as plots in Figure \ref{fig:le_bucket}.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.49\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\linewidth,
+    axis x line=left,
+    axis y line=left,
+    xmode=log,
+    xmin=3.5,ymin=0,
+    xlabel={$\param_D$},
+    ylabel={Absolute difference},
+    xtick={5, 10, 25, 50, 100, 250, 500, 1000},
+    xticklabels={5, 10, 25, 50, 100, 250, 500, 1000},
+    table/col sep=comma,
+]
+\addplot [color=blue, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{lebucket-abs-ts.csv};
+\addplot [color=red, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{lebucket-abs-us.csv};
+\addplot [color=green!40!black, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{lebucket-abs-fr.csv};
+\end{axis}
+\end{tikzpicture}
+\caption{Absolute difference.}
+\end{subfigure}
+\hfill
+%
+\begin{subfigure}{.49\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\linewidth,
+    axis x line=left,
+    axis y line=left,
+    xmode=log,
+    xmin=3.5,ymin=0,
+    xlabel={$\param_D$},
+    ylabel={Percentage difference},
+    xtick={5, 10, 25, 50, 100, 250, 500, 1000},
+    xticklabels={5, 10, 25, 50, 100, 250, 500, 1000},
+    legend pos=north east,
+    table/col sep=comma,
+]
+\addplot [color=blue, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{lebucket-rel-ts.csv};
+    \addlegendentry{Test data}
+\addplot [color=red, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{lebucket-rel-us.csv};
+    \addlegendentry{US migrations}
+\addplot [color=green!40!black, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{lebucket-rel-fr.csv};
+    \addlegendentry{France airlines}
+\end{axis}
+\end{tikzpicture}
+\caption{Percentage difference.}
+\end{subfigure}
+\caption{Average ambiguity difference of pixels with number of path incidences $\leq \param_D$.}
+\label{fig:le_bucket}
+\end{figure}
+
+As expected, Figure \ref{fig:le_bucket} presents higher accuracy than the general case with identical $\param_D$. However, even though these should hold all incidences, the data still converges with a difference of around $1\%$ compared to the na\"ive implementation; and, differently from the general case, the percentage differences are not constant across datasets, varying considerably between them. These can be explained by the duplicates in the reservoir, which skew the average according to how the paths are distributed across space. Another particularity in the data is the trend for slightly worse approximations as we increase $\param_D$. This is more noticeable with the synthetic and the US migrations datasets. The reason for such is that not only $\param_D$ increases, but the threshold used to select incidences increases as well. Therefore, the pixels used for the validation change as $\param_D$ changes.
+
+Given the difference in the thresholds, another perspective into how the different implementations compare with few path incidences is fixing a low threshold and looking at the difference in the pixels with fewer paths than it. For our validation, we fixed this threshold on 25 paths and evaluated the same pixels across every value of $\param_D$ being tested. The results are presented in Figure \ref{fig:small}.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.49\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\linewidth,
+    axis x line=left,
+    axis y line=left,
+    xmode=log,
+    xmin=3.5,ymin=0,
+    xlabel={$\param_D$},
+    ylabel={Absolute difference},
+    xtick={5, 10, 25, 50, 100, 250, 500, 1000},
+    xticklabels={5, 10, 25, 50, 100, 250, 500, 1000},
+    table/col sep=comma,
+]
+\addplot [color=blue, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{small-abs-ts.csv};
+\addplot [color=red, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{small-abs-us.csv};
+\addplot [color=green!40!black, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{small-abs-fr.csv};
+\end{axis}
+\end{tikzpicture}
+\caption{Absolute difference.}
+\end{subfigure}
+\hfill
+%
+\begin{subfigure}{.49\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\linewidth,
+    axis x line=left,
+    axis y line=left,
+    xmode=log,
+    xmin=3.5,ymin=0,
+    xlabel={$\param_D$},
+    ylabel={Percentage difference},
+    xtick={5, 10, 25, 50, 100, 250, 500, 1000},
+    xticklabels={5, 10, 25, 50, 100, 250, 500, 1000},
+    legend pos=north east,
+    table/col sep=comma,
+]
+\addplot [color=blue, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{small-rel-ts.csv};
+    \addlegendentry{Test data}
+\addplot [color=red, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{small-rel-us.csv};
+    \addlegendentry{US migrations}
+\addplot [color=green!40!black, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{small-rel-fr.csv};
+    \addlegendentry{France airlines}
+\end{axis}
+\end{tikzpicture}
+\caption{Percentage difference.}
+\end{subfigure}
+\caption{Average ambiguity difference of pixels with number of path incidences $\leq 25$.}
+\label{fig:small}
+\end{figure}
+
+The Figure presents data with a similar trend of approximation, but it becomes virtually identical after $\param_D = 50$, as all incidences can be stored in the reservoirs with larger sizes. The data again presents a variation across datasets and converges with a certain offset from the na\"ive implementation. In this case, it converges to values from $1\%$ to $2\%$ depending on the dataset, slightly worse then the previous cases.
+
+\subsection{High incidence of paths}
+\label{subsec:validation_large}
+
+Following the same concept as analyzing a few path incidences, we can analyze pixels with a high incidence of paths by comparing the ambiguity of pixels with more paths than $\param_D$. With this view of the data, we check pixels where the approximation is expected to differentiate from the original, as it is extrapolating results. The results of the differences are presented as plots in Figure \ref{fig:gt_bucket}.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.49\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\linewidth,
+    axis x line=left,
+    axis y line=left,
+    xmode=log,
+    xmin=3.5,ymin=0,
+    xlabel={$\param_D$},
+    ylabel={Absolute difference},
+    xtick={5, 10, 25, 50, 100, 250, 500, 1000},
+    xticklabels={5, 10, 25, 50, 100, 250, 500, 1000},
+    table/col sep=comma,
+]
+\addplot [color=blue, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{gtbucket-abs-ts.csv};
+\addplot [color=red, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{gtbucket-abs-us.csv};
+\addplot [color=green!40!black, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{gtbucket-abs-fr.csv};
+\end{axis}
+\end{tikzpicture}
+\caption{Absolute difference.}
+\end{subfigure}
+\hfill
+%
+\begin{subfigure}{.49\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\linewidth,
+    axis x line=left,
+    axis y line=left,
+    xmode=log,
+    xmin=3.5,ymin=0,
+    xlabel={$\param_D$},
+    ylabel={Percentage difference},
+    xtick={5, 10, 25, 50, 100, 250, 500, 1000},
+    xticklabels={5, 10, 25, 50, 100, 250, 500, 1000},
+    legend pos=north east,
+    table/col sep=comma,
+]
+\addplot [color=blue, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{gtbucket-rel-ts.csv};
+    \addlegendentry{Test data}
+\addplot [color=red, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{gtbucket-rel-us.csv};
+    \addlegendentry{US migrations}
+\addplot [color=green!40!black, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{gtbucket-rel-fr.csv};
+    \addlegendentry{France airlines}
+\end{axis}
+\end{tikzpicture}
+\caption{Percentage difference.}
+\end{subfigure}
+\caption{Average ambiguity difference of pixels with number of path incidences greater than $\param_D$.}
+\label{fig:gt_bucket}
+\end{figure}
+
+Apart from the minor deviation in in the US migrations dataset when $\param_D = 1000$, the results are very similar to the general case. The approximation quickly converges to values around $1\%$, which is a very promising result considering that we analyze only extrapolated pixels. This corroborates with the previous results in validating that the results produced with the approximation are sufficiently similar to the na\"ive implementation.
+
+Following, we filter pixels with more than 1000 incidences to evaluate how the extrapolation behaves as we increase the reservoir. The results can be seen in Figure \ref{fig:large}.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.49\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\linewidth,
+    axis x line=left,
+    axis y line=left,
+    xmode=log,
+    xmin=3.5,ymin=0,
+    xlabel={$\param_D$},
+    ylabel={Absolute difference},
+    xtick={5, 10, 25, 50, 100, 250, 500, 1000},
+    xticklabels={5, 10, 25, 50, 100, 250, 500, 1000},
+    table/col sep=comma,
+]
+\addplot [color=blue, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{large-abs-ts.csv};
+\addplot [color=red, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{large-abs-us.csv};
+\addplot [color=green!40!black, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{large-abs-fr.csv};
+\end{axis}
+\end{tikzpicture}
+\caption{Absolute difference.}
+\end{subfigure}
+\hfill
+%
+\begin{subfigure}{.49\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\linewidth,
+    axis x line=left,
+    axis y line=left,
+    xmode=log,
+    xmin=3.5,ymin=0,
+    xlabel={$\param_D$},
+    ylabel={Percentage difference},
+    xtick={5, 10, 25, 50, 100, 250, 500, 1000},
+    xticklabels={5, 10, 25, 50, 100, 250, 500, 1000},
+    legend pos=north east,
+    table/col sep=comma,
+]
+\addplot [color=blue, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{large-rel-ts.csv};
+    \addlegendentry{Test data}
+\addplot [color=red, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{large-rel-us.csv};
+    \addlegendentry{US migrations}
+\addplot [color=green!40!black, mark=*]
+ plot [error bars/.cd, y dir=both, y explicit]
+ table[x index=0, y index=1, y error index=2]{large-rel-fr.csv};
+    \addlegendentry{France airlines}
+\end{axis}
+\end{tikzpicture}
+\caption{Percentage difference.}
+\end{subfigure}
+\caption{Average ambiguity difference of pixels with number of path incidences greater than 1000.}
+\label{fig:large}
+\end{figure}
+
+Again, the Figure presents results in line to what we expect the approximation to behave as we increase $\param_D$. The data is very similar to the general case and to the extrapolation case, being accurate up to a difference of around $1\%$ with higher values of $\param_D$. The different datasets also remain quite similar, presenting only slightly more deviation compared to these two cases.
+
+\subsection{VRAM consumption}
+
+Given the comparison between ambiguity maps, we now compare the two implementations regarding VRAM consumption. Both implementations do not dynamically allocate memory; hence, they pre-allocate all the necessary buffers beforehand with a fixed size. Considering that the France airlines dataset has around 17 thousand paths and is the biggest of the three, we set up the buffers to handle path-sets with up to 20 thousand paths. Table \ref{tab:vram} presents the VRAM consumption for the two implementation with varying degrees of approximation.
+
+From the table we see that the VRAM consumption is significantly lower when applying the approximation strategy, reducing the allocated memory by almost an order of magnitude when $\param_D = 100$. The memory consumption also increases linearly with $\param_D$, as expected; this enables users to fine tune the desired precision without quickly running out of VRAM with slight variations in $\param_D$. However, for $\param_D = 1000$ the VRAM consumption is higher that the na\"ive implementation and do not produce significantly greater results than $\param_D = 500$ or $\param_D = 250$. This signals a limitation of the approximated implementation, where we cannot increase the precision indefinitely up to full precision.
+
+\begin{table}
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|}
+\hline
+Degree of approximation & VRAM consumption \\
+\hline
+\hline
+No approximation  & 1.93 GiB \\
+\hline
+$\param_D = 5$    & 0.01 GiB \\
+\hline
+$\param_D = 10$   & 0.02 GiB \\
+\hline
+$\param_D = 25$   & 0.05 GiB \\
+\hline
+$\param_D = 50$   & 0.10 GiB \\
+\hline
+$\param_D = 100$  & 0.20 GiB \\
+\hline
+$\param_D = 250$  & 0.49 GiB \\
+\hline
+$\param_D = 500$  & 0.98 GiB \\
+\hline
+$\param_D = 1000$ & 1.95 GiB \\
+\hline
+\end{tabular}
+\caption{Table with the VRAM consumption with varying degrees of approximations for handling path-sets up to 20 thousand paths.}
+\label{tab:vram}
+\end{table}
+
+\subsection{Visual comparison}
+\label{sec:validation:visual}
+
+With the numerical results properly presented, in this section we display how the actual visualization changes when we increase $\param_D$. To avoid pollution, we plot only for some of the values of $\param_D$, specifically those where we can see a substantial difference between the images. The visualizations can be seen in Figures \ref{fig:test1}, \ref{fig:test2} and \ref{fig:test3}.
+
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{confusion_10.png}
+        \caption{10 incidences.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{confusion_50.png}
+        \caption{50 incidences.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{confusion_100.png}
+        \caption{100 incidences.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{confusion_0.png}
+        \caption{No approximation.}
+    \end{subfigure}
+    \caption{Visualizations of the resulting ambiguity for the test data.}
+    \label{fig:test1}
+\end{figure}
+
+Figure \ref{fig:test1} illustrates that, in the synthetic dataset, the approximated visualization quickly captures the expected shape of the ambiguity map. Even with a reservoir with 10 incidences, the general drawing is similar to the one without approximations. Only minute details remain different from the na\"ive implementation and as $\param_D$ increases those gradually approximate the correct visualization. With $\param_D = 100$ this differences are fully flushed out, with both implementations generating images that are virtually identical.
+
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{us_10.png}
+        \caption{10 incidences.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{us_50.png}
+        \caption{50 incidences.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{us_100.png}
+        \caption{100 incidences.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{us_0.png}
+        \caption{No approximation.}
+    \end{subfigure}
+    \caption{Visualizations of the resulting ambiguity for the US migrations data.}
+    \label{fig:test2}
+\end{figure}
+
+Figure \ref{fig:test2} illustrates that the US migrations dataset has similar behaviour as the synthetic dataset, with the exception of anomalous regions with poor approximation in the $\param_D = 10$ case. The visualization overall is similar to the na\"ive implementation. Again, with $\param_D = 100$ the differences are virtually non-existent to the naked eye.
+
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{frair_10.png}
+        \caption{10 incidences.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{frair_50.png}
+        \caption{50 incidences.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{frair_100.png}
+        \caption{100 incidences.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{frair_0.png}
+        \caption{No approximation.}
+    \end{subfigure}
+    \caption{Visualizations of the resulting ambiguity for the France airlines data.}
+    \label{fig:test3}
+\end{figure}
+
+Finally, Figure \ref{fig:test3} shows that the behaviours observed in the previous two datasets remain partially true for the France airlines dataset. In opposition to what we see with the other datasets, the visualization with $\param_D = 10$ is extremely different from the one with no approximation, with almost none of the regions with high ambiguity being highlighted in the approximation. However, with $\param_D$ above 50 it follows the same trend as the previous datasets, with $\param_D = 100$ producing visualization virtually identical to the non-approximation counterpart.
+
+These examples show a correlation with the numerical results. In both it is noticeable that the approximation converges quickly as $\param_D$ increases, producing already good results with $\param_D = 100$. The further refinements from increasing $\param_D$ beyond 100 are diminishing returns, costing too much VRAM without getting a significant difference visually.
